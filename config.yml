@@ -1,0 +1,5 @@
+common:
+  work_dir: "test"
+  image_shape:
+    height: 128
+    width: 128
