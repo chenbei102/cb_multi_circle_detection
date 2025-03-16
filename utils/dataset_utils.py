@@ -12,7 +12,7 @@ import cv2
 
 def random_gray():
     """
-    Generate a random shade of gray.
+    Generate a random grayscale value.
     """
     return np.ones(3) * (np.random.randint(25, high=256) / 255)
 
