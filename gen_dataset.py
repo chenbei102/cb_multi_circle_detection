@@ -99,6 +99,9 @@ if __name__ == '__main__':
 
     work_dir = common_config['work_dir']
 
+    img_w = common_config['image_shape']['width']
+    img_h = common_config['image_shape']['height']
+
     if 'noise_scheduler' in config:
         noise_config = config['noise_scheduler']
         noise = LinearNoiseScheduler(noise_config['num_timesteps'],
@@ -112,9 +115,12 @@ if __name__ == '__main__':
     # -------------------------------------------------------------------------
     # create datasets for training, validation, and testing
 
-    dataset_train, _ = create_dataset(noise=noise, noise_steps=noise_steps)
-    dataset_valid, _ = create_dataset(dataset_size=512, noise=noise, noise_steps=noise_steps)
-    dataset_test, centers_test = create_dataset(shuffle=False, noise=noise, noise_steps=noise_steps)
+    dataset_train, _ = create_dataset(img_w, img_h,
+                                      noise=noise, noise_steps=noise_steps)
+    dataset_valid, _ = create_dataset(img_w, img_h, dataset_size=512,
+                                      noise=noise, noise_steps=noise_steps)
+    dataset_test, centers_test = create_dataset(img_w, img_h, shuffle=False,
+                                                noise=noise, noise_steps=noise_steps)
 
     # save datasets 
 
