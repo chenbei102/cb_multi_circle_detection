@@ -5,10 +5,13 @@ This module provides functions for building deep neural networks using TensorFlo
 
 """
 
+from .loss import loss_function
+
 from tensorflow import keras
 
 
-def create_deep_cnn(input_shape, filter_lst, kernel_lst):
+
+def create_deep_cnn(input_shape, filter_lst, kernel_lst, lr):
     """
     Construct a deep convolutional neural network (CNN) using the specified
     parameters.
@@ -20,6 +23,7 @@ def create_deep_cnn(input_shape, filter_lst, kernel_lst):
             each convolutional layer.
         kernel_lst (list of int or tuple): A list specifying the kernel size
             for each convolutional layer.
+        lr (float): The learning rate.
 
     Returns:
         model (tf.keras.Model): A deep CNN model.
@@ -36,5 +40,8 @@ def create_deep_cnn(input_shape, filter_lst, kernel_lst):
         model.add(keras.layers.BatchNormalization())
     
     model.add(keras.layers.Conv2D(1, kernel_lst[-1], padding='same', activation='relu'))
+
+    opt = keras.optimizers.Adam(learning_rate=lr)
+    model.compile(optimizer=opt, loss=loss_function)
 
     return model

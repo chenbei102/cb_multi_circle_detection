@@ -16,3 +16,6 @@ cnn_model:
   model_filename: "model.keras"
   checkpoint_filename: "checkpoint.keras"
   num_epochs: 1000
+  learning_rate: 1.0e-4
+  resume: false
+  from_checkpoint: true
