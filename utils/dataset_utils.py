@@ -19,7 +19,7 @@ def random_gray():
 
 def generate_coordinates(N, R, height, width):
     """
-    Generates N random 2D coordinates with minimum distance R.
+    Generate N random 2D coordinates with minimum distance R.
 
     Args:
         N: Number of coordinates to generate.
@@ -79,7 +79,7 @@ def generate_coordinates(N, R, height, width):
 
 def generate_sample(num_circles, height, width):
     """
-    Generates a sample consisting of an input image, an output image,
+    Generate a sample consisting of an input image, an output image,
     and a numpy array containing the coordinates of the centers of all circular
     areas.
 
@@ -90,8 +90,8 @@ def generate_sample(num_circles, height, width):
 
     Returns:
         tuple: A tuple containing:
-        - img_in (numpy.ndarray): A 2D array representing the input image.
-        - img_out (numpy.ndarray): A 2D array representing the output image. 
+        - img_in (numpy.ndarray): A 3D array representing the input image.
+        - img_out (numpy.ndarray): A 3D array representing the output image. 
         - coords (numpy.ndarray): A 2D array of shape (num_circles, 2), where
           each row contains the (x, y) coordinates of the centers of a circular
           areas.

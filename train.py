@@ -26,8 +26,6 @@ if __name__ == '__main__':
 
     work_dir = common_config['work_dir']
 
-    input_shape = (common_config['image_shape']['height'], common_config['image_shape']['width'], 1)
-
     model_config = config['cnn_model']
 
     # -------------------------------------------------------------------------
@@ -43,6 +41,9 @@ if __name__ == '__main__':
         model = tf.keras.models.load_model(os.path.join(work_dir, model_fname))
 
     else:
+
+        input_shape = (common_config['image_shape']['height'],
+                       common_config['image_shape']['width'], 1)
 
         filter_lst = model_config['filters']
         kernel_lst = model_config['kernel_sizes']
