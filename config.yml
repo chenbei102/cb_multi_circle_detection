@@ -3,3 +3,9 @@ common:
   image_shape:
     height: 128
     width: 128
+
+noise_scheduler:
+  num_timesteps: 1000
+  beta_start: 1.0e-4
+  beta_end: 0.02
+  noise_steps: 10
