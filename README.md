@@ -25,3 +25,71 @@ The process of locating circular areas consists of two key steps:
 ![model_illustration](fig/model_illustration.png)
 
 <p align="center"><strong>Illustration of the model for detecting multiple circular areas</strong></p>
+
+<br>
+
+The following presents the training history and evaluation results for the model configured in `config.yml`:  
+
+  <div align="center">
+    <img src="fig/loss_curves.png" alt="Figure 1" style="width: 49%;">
+    <p><strong>The Training and Validation Loss over Epochs</strong></p>
+  </div>
+  
+  <br>
+  
+  <div align="center">
+    <table border="1" style="width: 49%;">
+      <thead>
+        <tr>
+          <th>Metric</th>
+          <th>Non-Noised Test Data</th>
+          <th>Noised Test Data</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Total Circles</strong></td>
+          <td>3,124</td>
+          <td>3,079</td>
+        </tr>
+        <tr>
+          <td><strong>Detected Circles</strong></td>
+          <td>3,048</td>
+          <td>2,975</td>
+        </tr>
+        <tr>
+          <td><strong>Missed Circles</strong></td>
+          <td>76</td>
+          <td>104</td>
+        </tr>
+        <tr>
+          <td><strong>False Positives</strong></td>
+          <td>0</td>
+          <td>0</td>
+        </tr>
+        <tr>
+          <td><strong>Detection Rate (%)</strong></td>
+          <td>97.57</td>
+          <td>96.62</td>
+        </tr>
+        <tr>
+          <td><strong>Precision</strong></td>
+          <td>1.00</td>
+          <td>1.00</td>
+        </tr>
+        <tr>
+          <td><strong>Recall</strong></td>
+          <td>0.98</td>
+          <td>0.97</td>
+        </tr>
+        <tr>
+          <td><strong>F1 Score</strong></td>
+          <td>0.99</td>
+          <td>0.98</td>
+        </tr>
+      </tbody>
+    </table>
+    <p><strong> Circular Area Detection Performance</strong></p>
+  </div>
+
+
