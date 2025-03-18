@@ -25,3 +25,27 @@ The process of locating circular areas consists of two key steps:
 ![model_illustration](fig/model_illustration.png)
 
 <p align="center"><strong>Illustration of the model for detecting multiple circular areas</strong></p>
+
+---
+
+The following presents the training history and evaluation results for the model configured in `config.yml`:  
+
+<table>
+<tr><td>
+<img src="fig/loss_curves.png" alt="Figure 1">
+</td><td>
+
+| Metric                 | Non-Noised Test Data | Noised Test Data |
+|------------------------|----------------------|------------------|
+| **Total Circles**      |                3,124 |            3,079 |
+| **Detected Circles**   |                3,048 |            2,975 |
+| **Missed Circles**     |                   76 |              104 |
+| **False Positives**    |                    0 |                0 |
+| **Detection Rate (%)** |                97.57 |            96.62 |
+| **Precision**          |                 1.00 |             1.00 |
+| **Recall**             |                 0.98 |             0.97 |
+| **F1 Score**           |                 0.99 |             0.98 |
+
+</td></tr>
+</table>
+
