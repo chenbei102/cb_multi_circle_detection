@@ -3,6 +3,10 @@ common:
   image_shape:
     height: 128
     width: 128
+  dataset_size:
+    train: 1024
+    valid: 512
+    test: 1024
 
 noise_scheduler:
   num_timesteps: 1000

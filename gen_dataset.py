@@ -115,12 +115,18 @@ if __name__ == '__main__':
     # -------------------------------------------------------------------------
     # create datasets for training, validation, and testing
 
-    dataset_train, _ = create_dataset(img_w, img_h,
-                                      noise=noise, noise_steps=noise_steps)
-    dataset_valid, _ = create_dataset(img_w, img_h, dataset_size=512,
-                                      noise=noise, noise_steps=noise_steps)
-    dataset_test, centers_test = create_dataset(img_w, img_h, shuffle=False,
-                                                noise=noise, noise_steps=noise_steps)
+    dataset_train, _ = create_dataset(
+        img_w, img_h, common_config['dataset_size']['train'],
+        noise=noise, noise_steps=noise_steps
+    )
+    dataset_valid, _ = create_dataset(
+        img_w, img_h, common_config['dataset_size']['valid'],
+        noise=noise, noise_steps=noise_steps
+    )
+    dataset_test, centers_test = create_dataset(
+        img_w, img_h, common_config['dataset_size']['test'], shuffle=False,
+        noise=noise, noise_steps=noise_steps
+    )
 
     # save datasets 
 
