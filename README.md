@@ -31,7 +31,7 @@ The process of locating circular areas consists of two key steps:
 The following presents the training history and evaluation results for the model configured in `config.yml`:  
 
   <div align="center">
-    <img src="fig/loss_curves.png" alt="Figure 1" style="width: 49%;">
+    <img src="fig/loss_curves.png" alt="Figure 1" style="width: 66%;">
     <p><strong>The Training and Validation Loss over Epochs</strong></p>
   </div>
   
@@ -92,4 +92,64 @@ The following presents the training history and evaluation results for the model
     <p><strong> Circular Area Detection Performance</strong></p>
   </div>
 
+## Getting Started  
 
+### Requirements  
+The code has been successfully tested with the following dependencies:  
+- **Python** 3.9.21  
+- **TensorFlow** 2.18.0  
+- **PyYAML** 6.0.2  
+- **OpenCV-Python** 4.11.0.86  
+- **NumPy** 2.0.2
+- **Matplotlib** 3.9.4
+
+Ensure all required packages are installed before running the code.
+
+### Clone the Repository  
+To begin, clone the repository:  
+```sh
+git clone https://github.com/chenbei102/cb_multi_circle_detection.git
+cd cb_multi_circle_detection
+```  
+
+## Usage  
+
+### Configure Settings (Optional)  
+The `config.yml` file allows you to customize various settings. You can modify:  
+- The datasets used for training, validation, and testing.  
+- The deep CNN architecture.  
+- The noise level added to input images.  
+- Other relevant parameters.  
+
+Edit this file as needed before proceeding.  
+
+### Generate Datasets  
+Run the following command to generate three datasets for training, validation, and testing:  
+```sh
+python gen_dataset.py
+```  
+
+### Train the Deep CNN Model  
+```sh
+python train.py
+```  
+The trained model and training history will be saved.  
+
+### Visualize Training History (Optional)  
+To plot training and validation loss over epochs, run:  
+```sh
+python plot_history.py
+```  
+
+### Evaluate the Model  
+Assess the model's circular area detection performance with:  
+```sh
+python evaluate.py
+```  
+Evaluation metrics such as detection rate, precision, recall, and F1-score will be calculated.  
+
+### Visualize Circular Area Detection (Optional)  
+```sh
+python plot_predict.py
+```  
+A sample image will be processed to detect circular regions. The detected circles will be visually overlaid on the original image, which will then be displayed.
